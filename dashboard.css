@@ -1,0 +1,344 @@
+/* =============================================
+   BASE & VARIABLES
+   ============================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream: #f7f4e8;
+  --maroon: #800000;
+  --maroon-dark: #5c0000;
+  --gold: #D4AF37;
+  --gold-light: #e8cc6a;
+  --gold-pale: #f5e9b0;
+  --ivory: #fffcf3;
+  --white: #ffffff;
+  --text-dark: #1a1a1a;
+  --text-mid: #444;
+  --text-muted: #888;
+  --border: #e0d9c5;
+  /* ── MỚI: màu trạng thái ── */
+  --green: #2e7d32;
+  --green-bg: #f1f8e9;
+  --green-border: #81c784;
+  --blue: #1565c0;
+  --blue-bg: #e3f2fd;
+  --blue-border: #90caf9;
+  --orange: #e65100;
+  --orange-bg: #fff3e0;
+  --orange-border: #ffcc80;
+  /* ── shadows & radius ── */
+  --shadow-sm: 0 2px 8px rgba(128,0,0,0.08);
+  --shadow-md: 0 6px 24px rgba(128,0,0,0.12);
+  --shadow-lg: 0 12px 40px rgba(128,0,0,0.18);
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(--text-dark); min-height: 100vh; overflow-x: hidden; }
+
+/* =============================================
+   LAYOUT
+   ============================================= */
+.container { display: flex; min-height: 100vh; }
+
+/* ICON SIDEBAR */
+.sidebar-icons {
+  width: 72px; background: linear-gradient(180deg, #f5edd5, #ede3c5);
+  display: flex; flex-direction: column; align-items: center;
+  padding-top: 28px; gap: 8px; border-right: 1px solid var(--border);
+  position: sticky; top: 0; height: 100vh; z-index: 10;
+}
+.icon-btn { width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); cursor: pointer; transition: all 0.25s ease; color: #666; }
+.icon-btn:hover { background: var(--maroon); color: white; transform: scale(1.08); box-shadow: var(--shadow-sm); }
+.icon-btn.active { background: var(--maroon); color: white; box-shadow: var(--shadow-sm); }
+.sidebar-icons .material-symbols-outlined { font-size: 24px; }
+.logout { margin-top: auto; padding-bottom: 20px; }
+.logout .icon-btn:hover { background: #c0392b; }
+
+/* MENU SIDEBAR */
+.sidebar-menu {
+  width: 240px; background: linear-gradient(180deg, var(--maroon), var(--maroon-dark));
+  color: white; padding: 28px 20px; position: sticky; top: 0; height: 100vh;
+  display: flex; flex-direction: column; overflow-y: auto;
+}
+.profile { text-align: center; margin-bottom: 24px; padding-bottom: 22px; border-bottom: 1px solid rgba(255,255,255,0.15); }
+.avatar { width: 84px; height: 84px; background: linear-gradient(135deg, #fff 60%, var(--gold-pale)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-weight: 700; color: var(--maroon); font-size: 12.5px; border: 3px solid var(--gold); box-shadow: 0 0 0 5px rgba(212,175,55,0.18); }
+.name { background: rgba(255,255,255,0.12); color: white; padding: 8px 12px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 600; border: 1px solid rgba(255,255,255,0.18); letter-spacing: 0.3px; }
+.menu { list-style: none; flex: 1; }
+.menu li { margin-bottom: 4px; border-radius: var(--radius-sm); transition: all 0.22s ease; }
+.menu li a { display: flex; align-items: center; padding: 11px 14px; text-decoration: none; color: rgba(255,255,255,0.8); font-size: 13.5px; font-weight: 500; border-radius: var(--radius-sm); transition: all 0.22s ease; letter-spacing: 0.2px; }
+.menu li:hover a { background: rgba(212,175,55,0.18); color: var(--gold-light); padding-left: 20px; }
+.menu li.active { background: linear-gradient(90deg, var(--gold), #c9a227); box-shadow: 0 4px 14px rgba(212,175,55,0.3); }
+.menu li.active a { color: #1a0000; font-weight: 700; }
+
+/* CENTER */
+.center { flex: 1; padding: 36px 40px; overflow-y: auto; }
+
+/* PAGE TITLE */
+.page-title { font-family: 'Playfair Display', serif; font-size: 27px; font-weight: 800; color: var(--maroon); letter-spacing: 1.5px; margin-bottom: 28px; display: flex; align-items: center; gap: 14px; }
+.page-title::after { content: ''; flex: 1; height: 2px; max-width: 180px; background: linear-gradient(90deg, var(--gold), transparent); border-radius: 2px; }
+
+/* SECTION HEADER */
+.section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; margin-top: 32px; }
+.section-badge { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; box-shadow: 0 0 0 3px rgba(212,175,55,0.28); flex-shrink: 0; }
+.section-header h3 { font-family: 'Playfair Display', serif; font-size: 16.5px; font-weight: 700; color: var(--maroon); letter-spacing: 1px; text-transform: uppercase; }
+
+/* DIVIDER */
+.divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 6px 0 28px; }
+
+/* =============================================
+   PROGRESS BOX (NÂNG CẤP)
+   ============================================= */
+.progress-box {
+  background: linear-gradient(135deg, var(--white) 0%, #fffbf0 100%);
+  padding: 26px 30px; border-radius: var(--radius-lg);
+  border: 1.5px solid var(--border); box-shadow: var(--shadow-md);
+  position: relative; overflow: hidden;
+}
+.progress-box::before { content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: linear-gradient(180deg, var(--gold), var(--maroon)); border-radius: 4px 0 0 4px; }
+.progress-top-row { display: flex; align-items: center; gap: 30px; margin-bottom: 20px; }
+.progress-info { flex-shrink: 0; }
+.progress-label { font-size: 11px; font-weight: 700; letter-spacing: 1.8px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px; }
+.progress-count { font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 800; color: var(--maroon); line-height: 1; }
+.progress-count span { font-size: 17px; color: var(--text-muted); font-family: 'Nunito', sans-serif; font-weight: 600; }
+.progress-track { flex: 1; }
+.progress-track-label { font-size: 13px; color: var(--text-mid); font-weight: 600; margin-bottom: 10px; display: flex; justify-content: space-between; }
+.progress-track-label b { color: var(--maroon); }
+.progress-bar { width: 100%; height: 14px; background: #ece6d0; border-radius: 99px; overflow: hidden; box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); }
+.progress-fill { width: 37.5%; height: 100%; background: linear-gradient(90deg, #17af1a, #22cc26); border-radius: 99px; position: relative; }
+.progress-fill::after { content: ''; position: absolute; top: 2px; right: 4px; width: 6px; height: 6px; background: rgba(255,255,255,0.6); border-radius: 50%; }
+
+/* ── MỚI: progress bottom row ── */
+.progress-bottom-row {
+  display: flex; gap: 16px; padding-top: 16px;
+  border-top: 1px solid var(--border); flex-wrap: wrap;
+}
+.progress-meta-item {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 13px; font-weight: 600; color: var(--text-mid);
+  background: var(--cream); padding: 6px 14px; border-radius: 99px;
+  border: 1px solid var(--border);
+}
+.progress-meta-item .material-symbols-outlined { font-size: 16px; color: var(--maroon); font-variation-settings: 'FILL' 1; }
+
+/* =============================================
+   LESSON GRID — NÂNG CẤP (trạng thái bài)
+   ============================================= */
+.lesson-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; margin-bottom: 6px; }
+.lesson-card {
+  background: var(--ivory); border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg); padding: 24px 20px; text-align: center;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative; overflow: hidden;
+}
+.lesson-card::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 60%; height: 3px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0; transition: opacity 0.3s ease; }
+.lesson-card:hover { transform: translateY(-7px); box-shadow: var(--shadow-lg); border-color: var(--gold); }
+.lesson-card:hover::before { opacity: 1; }
+
+/* ── MỚI: trạng thái card ── */
+.lesson-card.done   { border-color: var(--green-border);  background: var(--green-bg); }
+.lesson-card.active { border-color: var(--blue-border);   background: var(--blue-bg); }
+.lesson-card.locked { border-color: var(--border); background: #fafaf5; opacity: 0.75; }
+
+.lesson-number { display: inline-block; background: var(--maroon); color: white; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; padding: 4px 12px; border-radius: 99px; margin-bottom: 11px; text-transform: uppercase; }
+.lesson-card.done   .lesson-number { background: var(--green); }
+.lesson-card.active .lesson-number { background: var(--blue); }
+.lesson-card.locked .lesson-number { background: #999; }
+
+.lesson-card h4 { font-family: 'Playfair Display', serif; font-size: 14.5px; font-weight: 700; color: var(--maroon); margin-bottom: 8px; line-height: 1.4; }
+.lesson-card p { font-size: 12.5px; line-height: 1.6; color: var(--text-mid); font-weight: 500; }
+
+/* ── MỚI: status badge ── */
+.lesson-status {
+  display: inline-flex; align-items: center; gap: 5px;
+  margin: 10px 0 4px; font-size: 12px; font-weight: 700;
+  padding: 4px 12px; border-radius: 99px; letter-spacing: 0.3px;
+}
+.status-done   { background: rgba(46,125,50,0.12);  color: var(--green); }
+.status-active { background: rgba(21,101,192,0.12); color: var(--blue); }
+.status-locked { background: rgba(0,0,0,0.06);      color: #999; }
+
+/* BUTTON */
+.btn { display: inline-flex; align-items: center; gap: 5px; margin-top: 10px; background: linear-gradient(135deg, var(--gold), #c9a227); padding: 9px 20px; border-radius: 99px; text-decoration: none; color: #1a0000; font-weight: 700; font-size: 12.5px; letter-spacing: 0.3px; box-shadow: 0 3px 12px rgba(212,175,55,0.35); transition: all 0.25s ease; border: none; cursor: pointer; font-family: 'Nunito', sans-serif; }
+.btn:hover { background: linear-gradient(135deg, #e8cc6a, var(--gold)); transform: translateY(-1px); color: #1a0000; }
+.btn-secondary { background: var(--white); color: var(--text-mid); border: 1.5px solid var(--border); box-shadow: var(--shadow-sm); }
+.btn-secondary:hover { background: var(--cream); border-color: var(--gold); color: var(--text-dark); }
+.btn-locked { background: #ddd; color: #999; box-shadow: none; cursor: not-allowed; }
+.btn-locked:hover { transform: none; background: #ddd; }
+
+/* =============================================
+   QUIZ CARDS — NÂNG CẤP (điểm & trạng thái)
+   ============================================= */
+.quiz-card {
+  background: var(--ivory); border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg); padding: 24px 20px; text-align: center;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative; overflow: hidden;
+}
+.quiz-card::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 60%; height: 3px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0; transition: opacity 0.3s ease; }
+.quiz-card:hover { transform: translateY(-7px); box-shadow: var(--shadow-lg); border-color: var(--gold); }
+.quiz-card:hover::before { opacity: 1; }
+
+.quiz-card h4 { font-family: 'Playfair Display', serif; font-size: 14.5px; font-weight: 700; color: var(--maroon); margin-bottom: 6px; line-height: 1.4; }
+.quiz-card p  { font-size: 12.5px; color: var(--text-mid); font-weight: 500; }
+
+/* ── MỚI: score badge ── */
+.quiz-score-row {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin: 10px 0 4px;
+}
+.quiz-score {
+  font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 800; color: var(--maroon);
+}
+.quiz-score-total { font-size: 13px; color: var(--text-muted); font-weight: 600; }
+.quiz-score-label { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; }
+.quiz-questions-count { font-size: 12px; color: var(--text-muted); margin-bottom: 2px; }
+
+/* =============================================
+   STATS GRID — NÂNG CẤP (thêm 2 stat)
+   ============================================= */
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 18px; margin-bottom: 40px; }
+.stat-card { background: var(--white); border-radius: var(--radius-lg); padding: 22px 16px; text-align: center; border: 1.5px solid var(--border); box-shadow: var(--shadow-sm); transition: all 0.3s ease; position: relative; overflow: hidden; }
+.stat-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--maroon), var(--gold)); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left; }
+.stat-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--gold); }
+.stat-card:hover::after { transform: scaleX(1); }
+.stat-icon-wrap { width: 52px; height: 52px; background: linear-gradient(135deg, #fff0f0, #ffe6e6); border-radius: 13px; display: flex; align-items: center; justify-content: center; margin: 0 auto 11px; }
+.stat-card .material-symbols-outlined { font-size: 27px; color: var(--maroon); font-variation-settings: 'FILL' 1; }
+.stat-card p { font-size: 11.5px; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 7px; }
+.stat-card h4 { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 800; color: var(--maroon); line-height: 1; }
+.stat-card .stat-sub { font-size: 11px; color: var(--text-muted); font-weight: 500; margin-top: 4px; }
+
+/* =============================================
+   MỚI: STREAK BANNER
+   ============================================= */
+.streak-banner {
+  background: linear-gradient(135deg, #fff8e1 0%, #fff3cd 100%);
+  border: 1.5px solid var(--gold);
+  border-radius: var(--radius-lg); padding: 16px 24px;
+  display: flex; align-items: center; gap: 16px;
+  box-shadow: 0 4px 16px rgba(212,175,55,0.2);
+}
+.streak-fire { font-size: 36px; flex-shrink: 0; }
+.streak-info { flex: 1; }
+.streak-title { font-size: 13px; font-weight: 700; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2px; }
+.streak-count { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 800; color: var(--maroon); }
+.streak-dots { display: flex; gap: 6px; margin-top: 8px; }
+.streak-dot { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; }
+.streak-dot.done   { background: var(--gold); color: #1a0000; }
+.streak-dot.today  { background: var(--maroon); color: white; box-shadow: 0 0 0 3px rgba(128,0,0,0.2); }
+.streak-dot.empty  { background: var(--border); color: var(--text-muted); }
+.streak-days { display: flex; gap: 6px; margin-top: 4px; }
+.streak-day-label { width: 28px; text-align: center; font-size: 9.5px; color: var(--text-muted); font-weight: 600; letter-spacing: 0.3px; }
+
+/* =============================================
+   MỚI: BOTTOM GRID (Lịch + Mục tiêu + Hoạt động)
+   ============================================= */
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 8px;
+}
+@media (max-width: 900px) { .bottom-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .bottom-grid { grid-template-columns: 1fr; } }
+
+.info-card {
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg); padding: 22px 20px;
+  box-shadow: var(--shadow-sm);
+}
+.info-card-title {
+  font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700;
+  color: var(--maroon); letter-spacing: 0.8px; text-transform: uppercase;
+  margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 8px;
+}
+.info-card-title .material-symbols-outlined { font-size: 18px; color: var(--gold); font-variation-settings: 'FILL' 1; }
+
+/* Lịch học */
+.schedule-list { display: flex; flex-direction: column; gap: 8px; }
+.schedule-item { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+.schedule-day { width: 42px; font-size: 11px; font-weight: 700; color: var(--text-muted); letter-spacing: 0.5px; flex-shrink: 0; }
+.schedule-tag { background: var(--gold-pale); color: var(--maroon); padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; border: 1px solid var(--gold); flex: 1; }
+.schedule-tag.quiz-tag { background: var(--blue-bg); color: var(--blue); border-color: var(--blue-border); }
+.schedule-tag.flash-tag { background: var(--orange-bg); color: var(--orange); border-color: var(--orange-border); }
+
+/* Mục tiêu */
+.goal-list { display: flex; flex-direction: column; gap: 9px; }
+.goal-item { display: flex; align-items: center; gap: 10px; font-size: 13.5px; font-weight: 500; }
+.goal-check { width: 20px; height: 20px; border-radius: 5px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 12px; }
+.goal-check.done  { background: var(--green); color: white; }
+.goal-check.todo  { background: var(--border); color: var(--text-muted); }
+.goal-text.done   { text-decoration: line-through; color: var(--text-muted); }
+
+/* Hoạt động gần đây */
+.activity-list { display: flex; flex-direction: column; gap: 9px; }
+.activity-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; }
+.activity-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 5px; }
+.activity-text { color: var(--text-mid); font-weight: 500; line-height: 1.4; flex: 1; }
+.activity-time { font-size: 11px; color: var(--text-muted); white-space: nowrap; }
+
+/* =============================================
+   MỚI: FLASHCARD STAT + ACHIEVEMENT
+   ============================================= */
+.two-col-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 8px;
+}
+@media (max-width: 600px) { .two-col-grid { grid-template-columns: 1fr; } }
+
+/* Flashcard stat */
+.flash-stat-list { display: flex; flex-direction: column; gap: 10px; }
+.flash-stat-item { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.flash-lesson-label { font-size: 13px; font-weight: 600; color: var(--text-mid); }
+.flash-bar-wrap { flex: 1; height: 8px; background: var(--border); border-radius: 99px; overflow: hidden; }
+.flash-bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold), #c9a227); border-radius: 99px; }
+.flash-count { font-size: 12px; font-weight: 700; color: var(--maroon); white-space: nowrap; }
+
+/* Achievements */
+.badge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.badge-item {
+  display: flex; align-items: center; gap: 9px;
+  background: var(--cream); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 9px 11px;
+  font-size: 12.5px; font-weight: 600; color: var(--text-mid);
+  transition: all 0.2s ease;
+}
+.badge-item.earned { background: var(--gold-pale); border-color: var(--gold); color: var(--text-dark); }
+.badge-item.earned:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.badge-icon { font-size: 20px; flex-shrink: 0; }
+
+/* =============================================
+   MỚI: WEEKLY CHART
+   ============================================= */
+.chart-card {
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg); padding: 22px 24px;
+  box-shadow: var(--shadow-sm); margin-bottom: 8px;
+}
+.chart-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: var(--maroon); letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
+.chart-title .material-symbols-outlined { font-size: 18px; color: var(--gold); font-variation-settings: 'FILL' 1; }
+.bar-chart { display: flex; align-items: flex-end; gap: 10px; height: 90px; }
+.bar-col { display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1; }
+.bar-fill { width: 100%; background: linear-gradient(180deg, var(--gold), #c9a227); border-radius: 6px 6px 0 0; transition: height 0.4s ease; min-height: 4px; }
+.bar-fill.current { background: linear-gradient(180deg, var(--maroon), var(--maroon-dark)); }
+.bar-label { font-size: 11px; color: var(--text-muted); font-weight: 600; }
+.bar-val { font-size: 11px; color: var(--text-mid); font-weight: 700; }
+
+/* =============================================
+   AI BUTTON & CHAT
+   ============================================= */
+.ai-button { position: fixed; bottom: 28px; right: 28px; width: 62px; height: 62px; background: linear-gradient(135deg, var(--maroon), var(--maroon-dark)); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; cursor: pointer; box-shadow: 0 6px 24px rgba(128,0,0,0.35); transition: all 0.3s ease; z-index: 1000; }
+.ai-button:hover { transform: scale(1.1) rotate(5deg); box-shadow: 0 10px 32px rgba(128,0,0,0.45); }
+.ai-chat { position: fixed; bottom: 106px; right: 28px; width: 318px; background: var(--white); border-radius: var(--radius-lg); box-shadow: 0 16px 48px rgba(0,0,0,0.18); display: none; overflow: hidden; z-index: 999; border: 1px solid var(--border); animation: slideUp 0.3s ease; }
+@keyframes slideUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+.ai-header { background: linear-gradient(135deg, var(--maroon), var(--maroon-dark)); color: white; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 14px; }
+.ai-header span { cursor: pointer; opacity: 0.7; transition: opacity 0.2s; }
+.ai-header span:hover { opacity: 1; }
+.ai-body { padding: 16px; height: 200px; overflow-y: auto; font-size: 13.5px; line-height: 1.6; background: #fafaf8; }
+.ai-body p { background: white; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border); display: inline-block; }
+.ai-input { display: flex; border-top: 1px solid var(--border); background: white; }
+.ai-input input { flex: 1; border: none; padding: 12px 14px; outline: none; font-family: 'Nunito', sans-serif; font-size: 13.5px; background: transparent; }
+.ai-input button { background: linear-gradient(135deg, var(--maroon), var(--maroon-dark)); color: white; border: none; padding: 12px 16px; cursor: pointer; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 13px; transition: opacity 0.2s; }
+.ai-input button:hover { opacity: 0.88; }
