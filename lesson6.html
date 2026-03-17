@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Bài 6 - Cách mạng tháng 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+<link rel="stylesheet" href="../css/lesson.css">
+
+</head>
+<body>
+<div class="container">
+
+  <div class="sidebar-icons">
+    <div class="icon-btn active"><span class="material-symbols-outlined">home</span></div>
+    <div class="icon-btn"><span class="material-symbols-outlined">menu_book</span></div>
+    <div class="icon-btn"><span class="material-symbols-outlined">school</span></div>
+    <div class="icon-btn"><span class="material-symbols-outlined">settings</span></div>
+    <div class="logout"><div class="icon-btn"><span class="material-symbols-outlined">logout</span></div></div>
+  </div>
+
+  <div class="sidebar-menu">
+    <div class="profile">
+      <div class="avatar">ẢNH</div>
+      <div class="name">HỌ VÀ TÊN</div>
+    </div>
+    <ul class="menu">
+      <li class="active"><a href="../html/index.html">Lộ trình của tôi</a></li>
+      <li><a href="../html/thuvienbaigiang.html">Thư viện bài giảng</a></li>
+      <li><a href="../html/khoahoc.html">Khóa học của bạn</a></li>
+      <li><a href="../html/luyenthi.html">Phòng luyện thi</a></li>
+      <li><a href="../html/bangxephang.html">Bảng xếp hạng</a></li>
+      <li><a href="../html/sotay.html">Sổ tay ghi chú</a></li>
+    </ul>
+  </div>
+
+  <div class="center">
+
+    <div class="lesson-header">
+      <a href="student_dashboard.html" class="back-btn">←</a>
+      <h2>BÀI 6: CÁCH MẠNG THÁNG TÁM NĂM 1945</h2>
+    </div>
+
+    <div class="lesson-tools">
+      <button onclick="showContent(event,'pdf')">📄 PDF sách giáo khoa</button>
+      <button onclick="showContent(event,'vr')">🥽 VR / AR</button>
+      <button onclick="showContent(event,'mindmap')">🧠 Sơ đồ tư duy</button>
+      <button onclick="showContent(event,'video')">🎬 Video bài giảng</button>
+      <button onclick="showContent(event,'slide')">📑 Slide bài giảng</button>
+      <button onclick="showContent(event,'summary')">📝 Nội dung bài học</button>
+      <button onclick="showContent(event,'flashcard')">🃏 Flashcard</button>
+    </div>
+
+    <div class="lesson-area">
+
+      <div id="pdf" class="lesson-content">
+        <div class="media-wrapper">
+          <embed src="../pdf/sgklichsu12.pdf" type="application/pdf" width="100%" height="750px">
+          </div>
+        </div>
+
+      <div id="vr" class="lesson-content">
+    <iframe 
+        src="https://48hangngang.hochiminh.vn/" 
+        width="100%" 
+        height="600px" 
+        style="border:none; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" 
+        allowfullscreen 
+        title="Tham quan ảo Di tích 48 Hàng Ngang"
+        loading="lazy">
+    </iframe>
+</div>
+
+      <div id="mindmap" class="lesson-content">
+        <div class="media-wrapper mindmap-box">
+          <img src="../anhvideo/sodotuduy.png" alt="Sơ đồ tư duy">
+        </div>
+      </div>
+
+      <div id="video" class="lesson-content">
+  <div class="video-layout">
+
+<!-- VIDEO CHÍNH -->
+<div class="video-main">
+  <h3>🎬 Video giảng bài chi tiết</h3>
+
+  <iframe 
+    src="https://www.youtube.com/embed/Z_I9wVcj06Q"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+
+</div>
+
+<!-- VIDEO PHỤ -->
+<div class="video-extra">
+
+  <!-- VIDEO TÓM TẮT -->
+  <div class="video-card">
+    <h4>📚 Video tóm tắt bài học</h4>
+
+    <video controls poster="../anhvideo/tomtat.png" width="100%">
+      <source src="../anhvideo/tomtat.mp4" type="video/mp4">
+    </video>
+
+  </div>
+
+  <!-- VIDEO TUYÊN NGÔN -->
+  <div class="video-card">
+    <h4>🇻🇳 Bác Hồ đọc Tuyên ngôn Độc lập</h4>
+
+    <video controls poster="../anhvideo/tuyenngon.jpg" width="100%">
+      <source src="../anhvideo/tuyenngon.mp4" type="video/mp4">
+    </video>
+
+  </div>
+</div>
+</div>
+  </div>
+<div id="slide" class="lesson-content">
+  <div class="media-wrapper">
+    <embed src="../pdf/slidebai6.pdf" type="application/pdf" width="100%" height="750px">
+  </div>
+</div>
+
+</div>
+    <div id="summary" class="lesson-content">
+
+<h3>📚 I. Mục tiêu bài học</h3>
+
+<div class="summary-box">
+
+<h4>1. Kiến thức cần có</h4>
+<ul>
+<li>Trình bày được hoàn cảnh lịch sử dẫn đến Cách mạng tháng Tám 1945.</li>
+<li>Nêu được diễn biến chính của Cách mạng tháng Tám.</li>
+<li>Phân tích nguyên nhân thắng lợi và ý nghĩa lịch sử của cách mạng.</li>
+</ul>
+
+<h4>2. Năng lực</h4>
+<ul>
+<li>Năng lực tư duy lịch sử.</li>
+<li>Năng lực phân tích sự kiện theo trình tự thời gian.</li>
+<li>Năng lực thảo luận và hợp tác nhóm.</li>
+</ul>
+
+<h4>3. Phẩm chất</h4>
+<ul>
+<li>Bồi dưỡng lòng yêu nước.</li>
+<li>Tự hào về truyền thống đấu tranh của dân tộc Việt Nam.</li>
+</ul>
+
+</div>
+
+
+<hr>
+
+
+<h3>📖 II. Nội dung bài học</h3>
+
+<h4>1. Hoàn cảnh lịch sử của Cách mạng tháng Tám</h4>
+
+<div class="summary-box">
+
+<h5>🌍 a. Tình hình thế giới</h5>
+
+<ul>
+<li>Năm 1945, Chiến tranh thế giới thứ hai bước vào giai đoạn kết thúc.</li>
+<li>Phát xít Đức bị đánh bại.</li>
+<li>Nhật Bản thất bại nặng nề.</li>
+<li>Ngày <b>15/8/1945</b>, Nhật tuyên bố đầu hàng Đồng minh vô điều kiện.</li>
+</ul>
+
+<p class="highlight">→ Điều này tạo nên thời cơ thuận lợi cho cách mạng Việt Nam.</p>
+
+<h5>🏠 b. Tình hình trong nước</h5>
+
+<h5>Chính trị</h5>
+
+<ul>
+<li>Ngày <b>9/3/1945</b>, Nhật đảo chính Pháp.</li>
+<li>Chính quyền thực dân Pháp sụp đổ.</li>
+<li>Nhật lập chính phủ bù nhìn.</li>
+</ul>
+
+<h5>Kinh tế</h5>
+
+<ul>
+<li>Năm 1945 xảy ra nạn đói khiến hơn <b>2 triệu người chết</b>.</li>
+<li>Nhân dân vô cùng căm phẫn chế độ áp bức.</li>
+</ul>
+
+<h5>Lực lượng cách mạng</h5>
+
+<ul>
+<li>Mặt trận Việt Minh phát triển mạnh.</li>
+<li>Lực lượng vũ trang quần chúng đã sẵn sàng.</li>
+</ul>
+
+<p class="highlight">→ Cách mạng đã có đủ điều kiện để bùng nổ.</p>
+
+</div>
+
+
+<hr>
+
+
+<h4>2. Diễn biến của Cách mạng tháng Tám</h4>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<span class="time">13/8/1945</span>
+<p>Trung ương Đảng và Tổng bộ Việt Minh quyết định tổng khởi nghĩa.</p>
+</div>
+
+<div class="timeline-item">
+<span class="time">16/8/1945</span>
+<p>Đại hội Quốc dân tại Tân Trào quyết định khởi nghĩa.</p>
+</div>
+
+<div class="timeline-item">
+<span class="time">19/8/1945</span>
+<p>Khởi nghĩa thắng lợi tại Hà Nội.</p>
+</div>
+
+<div class="timeline-item">
+<span class="time">23/8/1945</span>
+<p>Khởi nghĩa thắng lợi tại Huế.</p>
+</div>
+
+<div class="timeline-item">
+<span class="time">25/8/1945</span>
+<p>Nhân dân Sài Gòn giành chính quyền.</p>
+</div>
+
+<div class="timeline-item important">
+<span class="time">2/9/1945</span>
+<p>Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình → Khai sinh nước Việt Nam Dân chủ Cộng hòa.</p>
+</div>
+
+</div>
+
+
+<hr>
+
+
+<h4>3. Nguyên nhân thắng lợi</h4>
+
+<div class="summary-grid">
+
+<div class="reason-box">
+
+<h5>Nguyên nhân chủ quan</h5>
+
+<ul>
+<li>Sự lãnh đạo đúng đắn của Đảng Cộng sản Đông Dương.</li>
+<li>Sự chuẩn bị lâu dài của lực lượng cách mạng.</li>
+<li>Tinh thần yêu nước của nhân dân.</li>
+</ul>
+
+</div>
+
+<div class="reason-box">
+
+<h5>Nguyên nhân khách quan</h5>
+
+<ul>
+<li>Nhật Bản đầu hàng Đồng minh.</li>
+<li>Hệ thống thực dân – phát xít suy yếu.</li>
+</ul>
+
+</div>
+
+</div>
+
+
+<hr>
+
+
+<h4>4. Ý nghĩa lịch sử</h4>
+
+<div class="summary-grid">
+
+<div class="reason-box">
+
+<h5>Đối với Việt Nam</h5>
+
+<ul>
+<li>Lật đổ chế độ thực dân và phong kiến.</li>
+<li>Mở ra kỷ nguyên độc lập cho dân tộc.</li>
+</ul>
+
+</div>
+
+<div class="reason-box">
+
+<h5>Đối với thế giới</h5>
+
+<ul>
+<li>Cổ vũ phong trào giải phóng dân tộc trên toàn thế giới.</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+      <div id="flashcard" class="lesson-content">
+
+        <div class="flashcard" onclick="this.classList.toggle('flip')"><div class="flashcard-inner"><div class="flashcard-front">Cách mạng tháng 8 diễn ra năm nào?</div><div class="flashcard-back">1945</div></div></div>
+        <div class="flashcard" onclick="this.classList.toggle('flip')"><div class="flashcard-inner"><div class="flashcard-front">Ai đọc Tuyên ngôn Độc lập ngày 2/9/1945?</div><div class="flashcard-back">Hồ Chí Minh</div></div></div>
+        <div class="flashcard" onclick="this.classList.toggle('flip')"><div class="flashcard-inner"><div class="flashcard-front">Việc Nhật đầu hàng Đồng minh đã tạo ra điều gì cho cách mạng Việt Nam?</div><div class="flashcard-back">Thời cơ thuận lợi để cách mạng bùng nổ.</div></div></div>
+        <div class="flashcard" onclick="this.classList.toggle('flip')"><div class="flashcard-inner"><div class="flashcard-front">Nạn đói năm 1945 khiến khoảng bao nhiêu người chết?</div><div class="flashcard-back">Hơn 2 triệu người.</div></div></div>
+        <div class="flashcard" onclick="this.classList.toggle('flip')"><div class="flashcard-inner"><div class="flashcard-front">Tổ chức cách mạng nào phát triển mạnh trước Cách mạng tháng Tám?</div><div class="flashcard-back">Mặt trận Việt Minh.</div></div></div>
+        <div class="flashcard" onclick="this.classList.toggle('flip')"><div class="flashcard-inner"><div class="flashcard-front">Trung ương Đảng và Tổng bộ Việt Minh quyết định tổng khởi nghĩa vào ngày nào?</div><div class="flashcard-back">13/8/1945.</div></div></div>
+        <div class="flashcard" onclick="this.classList.toggle('flip')"><div class="flashcard-inner"><div class="flashcard-front">Đại hội Quốc dân họp ở đâu để quyết định khởi nghĩa?</div><div class="flashcard-back">Tân Trào.</div></div></div>
+        <div class="flashcard" onclick="this.classList.toggle('flip')"><div class="flashcard-inner"><div class="flashcard-front">Đại hội Quốc dân tại Tân Trào diễn ra vào ngày nào?</div><div class="flashcard-back">16/8/1945.</div></div></div>
+        <div class="flashcard" onclick="this.classList.toggle('flip')"><div class="flashcard-inner"><div class="flashcard-front">Ngày 19/8/1945 gắn với sự kiện lịch sử nào?</div><div class="flashcard-back">Khởi nghĩa giành chính quyền thắng lợi ở Hà Nội.</div></div></div>
+        <div class="flashcard" onclick="this.classList.toggle('flip')"><div class="flashcard-inner"><div class="flashcard-front">Khởi nghĩa giành chính quyền ở Huế thắng lợi vào ngày nào?</div><div class="flashcard-back">23/8/1945.</div></div></div>
+        <div class="flashcard" onclick="this.classList.toggle('flip')"><div class="flashcard-inner"><div class="flashcard-front">Khởi nghĩa giành chính quyền ở Sài Gòn thắng lợi vào ngày nào?</div><div class="flashcard-back">25/8/1945.</div></div></div>
+        <div class="flashcard" onclick="this.classList.toggle('flip')"><div class="flashcard-inner"><div class="flashcard-front">Trong bao lâu chính quyền đã về tay nhân dân trên cả nước?</div><div class="flashcard-back">Trong vòng 15 ngày.</div></div></div>
+        <div class="flashcard" onclick="this.classList.toggle('flip')"><div class="flashcard-inner"><div class="flashcard-front">Nước Việt Nam Dân chủ Cộng hòa được thành lập vào ngày nào?</div><div class="flashcard-back">2/9/1945.</div></div></div>
+        <div class="flashcard" onclick="this.classList.toggle('flip')"><div class="flashcard-inner"><div class="flashcard-front">Sự kiện đọc Tuyên ngôn Độc lập đánh dấu điều gì?</div><div class="flashcard-back">Sự ra đời của nước Việt Nam Dân chủ Cộng hòa.</div></div></div>
+        <div class="flashcard" onclick="this.classList.toggle('flip')"><div class="flashcard-inner"><div class="flashcard-front">Nguyên nhân chủ quan quan trọng nhất của thắng lợi cách mạng là gì?</div><div class="flashcard-back">Sự lãnh đạo đúng đắn của Đảng Cộng sản Đông Dương.</div></div></div>
+        <div class="flashcard" onclick="this.classList.toggle('flip')"><div class="flashcard-inner"><div class="flashcard-front">Một yếu tố quan trọng giúp cách mạng thắng lợi là gì?</div><div class="flashcard-back">Sự chuẩn bị lâu dài của lực lượng cách mạng.</div></div></div>
+        <div class="flashcard" onclick="this.classList.toggle('flip')"><div class="flashcard-inner"><div class="flashcard-front">Tinh thần nào của nhân dân góp phần vào thắng lợi của cách mạng?</div><div class="flashcard-back">Tinh thần yêu nước.</div></div></div>
+        <div class="flashcard" onclick="this.classList.toggle('flip')"><div class="flashcard-inner"><div class="flashcard-front">Nguyên nhân khách quan quan trọng của thắng lợi cách mạng là gì?</div><div class="flashcard-back">Nhật Bản đầu hàng Đồng minh.</div></div></div>
+        <div class="flashcard" onclick="this.classList.toggle('flip')"><div class="flashcard-inner"><div class="flashcard-front">Hệ thống nào trên thế giới suy yếu tạo điều kiện cho cách mạng Việt Nam thắng lợi?</div><div class="flashcard-back">Hệ thống thực dân và phát xít.</div></div></div>
+        <div class="flashcard" onclick="this.classList.toggle('flip')"><div class="flashcard-inner"><div class="flashcard-front">Cách mạng tháng Tám đã lật đổ những chế độ nào ở Việt Nam?</div><div class="flashcard-back">Chế độ thực dân và phong kiến.</div></div></div>
+        <div class="flashcard" onclick="this.classList.toggle('flip')"><div class="flashcard-inner"><div class="flashcard-front">Cách mạng tháng Tám mở ra kỷ nguyên gì cho dân tộc Việt Nam?</div><div class="flashcard-back">Kỷ nguyên độc lập dân tộc.</div></div></div>
+        <div class="flashcard" onclick="this.classList.toggle('flip')"><div class="flashcard-inner"><div class="flashcard-front">Cách mạng tháng Tám có tác động gì đối với thế giới?</div><div class="flashcard-back">Cổ vũ phong trào giải phóng dân tộc.</div></div></div>
+
+      </div><!-- #flashcard -->
+
+    </div><!-- .lesson-area -->
+  </div><!-- .center -->
+</div><!-- .container -->
+
+<div class="ai-button" onclick="toggleChat()">🤖</div>
+
+<div class="ai-chat" id="aiChat">
+  <div class="ai-header">🤖 Trợ lý AI<span onclick="toggleChat()">✖</span></div>
+  <div class="ai-body" id="aiBody"><p>Hỏi tôi về bài học này!</p></div>
+  <div class="ai-input">
+    <input type="text" id="aiInput" placeholder="Hỏi AI..." onkeydown="if(event.key==='Enter')sendMsg()"/>
+    <button onclick="sendMsg()">Gửi</button>
+  </div>
+</div>
+
+<script src="../js/lesson.js"></script>
+</body>
+</html>
