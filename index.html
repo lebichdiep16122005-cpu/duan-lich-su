@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Student Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="../css/dashboard.css">
+
+</head>
+<body>
+
+<div class="container">
+
+  <!-- SIDEBAR ICON -->
+  <div class="sidebar-icons">
+    <div class="icon-btn active"><span class="material-symbols-outlined">home</span></div>
+    <div class="icon-btn"><span class="material-symbols-outlined">schedule</span></div>
+    <div class="icon-btn"><span class="material-symbols-outlined">groups</span></div>
+    <div class="icon-btn"><span class="material-symbols-outlined">settings</span></div>
+    <div class="logout"><div class="icon-btn"><span class="material-symbols-outlined">logout</span></div></div>
+  </div>
+
+  <!-- SIDEBAR MENU -->
+  <div class="sidebar-menu">
+    <div class="profile">
+      <div class="avatar">ẢNH</div>
+      <div class="name">HỌ VÀ TÊN</div>
+    </div>
+    <ul class="menu">
+      <li class="active"><a href="../html/index.html">Lộ trình của tôi</a></li>
+      <li><a href="../html/thuvienbaigiang.html">Thư viện bài giảng</a></li>
+      <li><a href="../html/khoahoc.html">Khóa học của bạn</a></li>
+      <li><a href="../html/luyenthi.html">Phòng luyện thi</a></li>
+      <li><a href="../html/bangxephang.html">Bảng xếp hạng</a></li>
+      <li><a href="../html/sotay.html">Sổ tay ghi chú</a></li>
+    </ul>
+  </div>
+
+  <!-- CENTER CONTENT -->
+  <div class="center">
+
+    <h2 class="page-title">LỘ TRÌNH CỦA TÔI</h2>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 1: TIẾN ĐỘ HỌC TẬP (NÂNG CẤP)
+         Thêm: thời gian học tuần + số flashcard đã ôn
+         ══════════════════════════════════════════ -->
+    <div class="section-header">
+      <div class="section-badge"></div>
+      <h3>Tiến độ học tập</h3>
+    </div>
+    <div class="progress-box">
+      <div class="progress-top-row">
+        <div class="progress-info">
+          <div class="progress-label">Hoàn thành</div>
+          <div class="progress-count">3 <span>/ 8 bài</span></div>
+        </div>
+        <div class="progress-track">
+          <div class="progress-track-label">
+            <span>Tiến độ tổng thể</span>
+            <b>37.5%</b>
+          </div>
+          <div class="progress-bar"><div class="progress-fill"></div></div>
+        </div>
+      </div>
+      <!-- MỚI: dòng meta bên dưới progress bar -->
+      <div class="progress-bottom-row">
+        <div class="progress-meta-item">
+          <span class="material-symbols-outlined">schedule</span>
+          Thời gian tuần này: <b style="color:var(--maroon);margin-left:4px;">2h 30m</b>
+        </div>
+        <div class="progress-meta-item">
+          <span class="material-symbols-outlined">style</span>
+          Flashcard đã ôn: <b style="color:var(--maroon);margin-left:4px;">16 thẻ</b>
+        </div>
+        <div class="progress-meta-item">
+          <span class="material-symbols-outlined">emoji_events</span>
+          Điểm TB: <b style="color:var(--maroon);margin-left:4px;">8.5 / 10</b>
+        </div>
+      </div>
+    </div>
+
+    <!-- MỚI: STREAK BANNER -->
+    <div style="margin-top:16px;">
+      <div class="streak-banner">
+        <div class="streak-fire">🔥</div>
+        <div class="streak-info">
+          <div class="streak-title">Chuỗi học liên tục</div>
+          <div class="streak-count">5 ngày liên tiếp!</div>
+          <div class="streak-dots">
+            <div class="streak-dot done">T2</div>
+            <div class="streak-dot done">T3</div>
+            <div class="streak-dot done">T4</div>
+            <div class="streak-dot done">T5</div>
+            <div class="streak-dot today">T6</div>
+            <div class="streak-dot empty">T7</div>
+            <div class="streak-dot empty">CN</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 2: HỌC THEO BÀI (NÂNG CẤP)
+         Thêm: trạng thái Đã học / Đang học / Khóa
+         ══════════════════════════════════════════ -->
+    <div class="section-header">
+      <div class="section-badge"></div>
+      <h3>Học theo bài</h3>
+    </div>
+    <div class="lesson-grid">
+
+      <!-- Bài 6: Đã học -->
+      <div class="lesson-card done">
+        <div class="lesson-number">Bài 6</div>
+        <h4>Cách Mạng Tháng Tám Năm 1945</h4>
+        <p>Diễn biến và ý nghĩa lịch sử của cuộc Cách mạng Tháng Tám</p>
+        <div class="lesson-status status-done">✓ Đã hoàn thành</div>
+        <a href="lesson6.html" class="btn btn-secondary">Xem lại</a>
+      </div>
+
+      <!-- Bài 7: Đang học -->
+      <div class="lesson-card active">
+        <div class="lesson-number">Bài 7</div>
+        <h4>Kháng Chiến Chống Thực Dân Pháp</h4>
+        <p>Cuộc kháng chiến chống thực dân Pháp giai đoạn 1945–1954</p>
+        <div class="lesson-status status-active">▶ Đang học</div>
+        <a href="lesson7.html" class="btn">Tiếp tục →</a>
+      </div>
+
+      <!-- Bài 8: Chưa mở -->
+      <div class="lesson-card locked">
+        <div class="lesson-number">Bài 8</div>
+        <h4>Kháng Chiến Chống Mỹ Cứu Nước</h4>
+        <p>Cuộc kháng chiến chống Mỹ, cứu nước giai đoạn 1954–1975</p>
+        <div class="lesson-status status-locked">🔒 Mở sau khi hoàn thành bài 7</div>
+        <span class="btn btn-locked">Chưa mở</span>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 3: KIỂM TRA (NÂNG CẤP)
+         Thêm: điểm đã làm, số câu, nút làm lại
+         ══════════════════════════════════════════ -->
+    <div class="section-header">
+      <div class="section-badge"></div>
+      <h3>Luyện tập</h3>
+    </div>
+    <div class="lesson-grid">
+
+      <!-- Quiz 6: Đã làm, có điểm -->
+      <div class="quiz-card">
+        <div class="lesson-number" style="background:var(--green);">Bài 6</div>
+        <h4>Cách Mạng Tháng Tám Năm 1945</h4>
+        <div class="quiz-score-label">Điểm của bạn</div>
+        <div class="quiz-score-row">
+          <span class="quiz-score">8</span>
+          <span class="quiz-score-total">/ 10</span>
+        </div>
+        <div class="quiz-questions-count">10 câu hỏi</div>
+        <a href="../html/cauhoi6.html" class="btn">Làm lại →</a>
+      </div>
+
+      
+      <!-- Quiz 7: Đang mở -->
+      <div class="quiz-card">
+        <div class="lesson-number" style="background:var(--blue);">Bài 7</div>
+        <h4>Kháng Chiến Chống Thực Dân Pháp</h4>
+        <div class="quiz-score-label">Chưa làm</div>
+        <div class="quiz-score-row">
+          <span class="quiz-score" style="color:var(--text-muted);">—</span>
+        </div>
+        <div class="quiz-questions-count">10 câu hỏi</div>
+        <a href="quiz7.html" class="btn">Làm bài →</a>
+      </div>
+
+      <!-- Quiz 8: Khóa -->
+      <div class="quiz-card" style="opacity:0.7;">
+        <div class="lesson-number" style="background:#999;">Bài 8</div>
+        <h4>Kháng Chiến Chống Mỹ Cứu Nước</h4>
+        <div class="quiz-score-label">Chưa mở</div>
+        <div class="quiz-score-row">
+          <span class="quiz-score" style="color:var(--text-muted);">🔒</span>
+        </div>
+        <div class="quiz-questions-count">10 câu hỏi</div>
+        <span class="btn btn-locked">Chưa mở</span>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 4: THỐNG KÊ HỌC TẬP (NÂNG CẤP)
+         Thêm: Thời gian học + Flashcard đã ôn
+         ══════════════════════════════════════════ -->
+    <div class="section-header">
+      <div class="section-badge"></div>
+      <h3>Thống kê học tập</h3>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon-wrap"><span class="material-symbols-outlined">menu_book</span></div>
+        <p>Bài đã học</p>
+        <h4>3</h4>
+        <div class="stat-sub">/ 8 bài</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon-wrap"><span class="material-symbols-outlined">quiz</span></div>
+        <p>Bài kiểm tra</p>
+        <h4>2</h4>
+        <div class="stat-sub">đã hoàn thành</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon-wrap"><span class="material-symbols-outlined">star</span></div>
+        <p>Điểm trung bình</p>
+        <h4>8.5</h4>
+        <div class="stat-sub">/ 10 điểm</div>
+      </div>
+      <!-- MỚI: Thời gian học -->
+      <div class="stat-card">
+        <div class="stat-icon-wrap"><span class="material-symbols-outlined">schedule</span></div>
+        <p>Thời gian học</p>
+        <h4>2h</h4>
+        <div class="stat-sub">30m tuần này</div>
+      </div>
+      <!-- MỚI: Flashcard đã ôn -->
+      <div class="stat-card">
+        <div class="stat-icon-wrap"><span class="material-symbols-outlined">style</span></div>
+        <p>Flashcard ôn</p>
+        <h4>16</h4>
+        <div class="stat-sub">thẻ đã ôn tập</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         MỚI SECTION 5: BIỂU ĐỒ TIẾN ĐỘ THEO TUẦN
+         ══════════════════════════════════════════ -->
+    <div class="section-header">
+      <div class="section-badge"></div>
+      <h3>Biểu đồ tiến độ</h3>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">
+        <span class="material-symbols-outlined">bar_chart</span>
+        Thời gian học theo tuần (giờ)
+      </div>
+      <div class="bar-chart">
+        <div class="bar-col">
+          <div class="bar-val">1.5h</div>
+          <div class="bar-fill" style="height:50px;"></div>
+          <div class="bar-label">Tuần 1</div>
+        </div>
+        <div class="bar-col">
+          <div class="bar-val">3h</div>
+          <div class="bar-fill" style="height:80px;"></div>
+          <div class="bar-label">Tuần 2</div>
+        </div>
+        <div class="bar-col">
+          <div class="bar-val">2h</div>
+          <div class="bar-fill" style="height:60px;"></div>
+          <div class="bar-label">Tuần 3</div>
+        </div>
+        <div class="bar-col">
+          <div class="bar-val">2.5h</div>
+          <div class="bar-fill current" style="height:70px;"></div>
+          <div class="bar-label">Tuần 4</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         MỚI SECTION 6: LỊCH HỌC + MỤC TIÊU + HOẠT ĐỘNG
+         ══════════════════════════════════════════ -->
+    <div class="section-header">
+      <div class="section-badge"></div>
+      <h3>Lịch học &amp; Mục tiêu</h3>
+    </div>
+    <div class="bottom-grid">
+
+      <!-- Lịch học tuần này -->
+      <div class="info-card">
+        <div class="info-card-title">
+          <span class="material-symbols-outlined">calendar_month</span>
+          Lịch học tuần này
+        </div>
+        <div class="schedule-list">
+          <div class="schedule-item">
+            <div class="schedule-day">Thứ 2</div>
+            <div class="schedule-tag">📖 Bài 7</div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-day">Thứ 4</div>
+            <div class="schedule-tag flash-tag">🃏 Flashcard</div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-day">Thứ 6</div>
+            <div class="schedule-tag quiz-tag">✏️ Quiz bài 7</div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-day">Thứ 7</div>
+            <div class="schedule-tag">📖 Bài 8</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mục tiêu học tập -->
+      <div class="info-card">
+        <div class="info-card-title">
+          <span class="material-symbols-outlined">flag</span>
+          Mục tiêu học tập
+        </div>
+        <div class="goal-list">
+          <div class="goal-item">
+            <div class="goal-check done">✓</div>
+            <div class="goal-text done">Hoàn thành Bài 6</div>
+          </div>
+          <div class="goal-item">
+            <div class="goal-check done">✓</div>
+            <div class="goal-text done">Làm quiz Bài 6</div>
+          </div>
+          <div class="goal-item">
+            <div class="goal-check todo">□</div>
+            <div class="goal-text">Hoàn thành Bài 7</div>
+          </div>
+          <div class="goal-item">
+            <div class="goal-check todo">□</div>
+            <div class="goal-text">Quiz Bài 7 đạt ≥ 8/10</div>
+          </div>
+          <div class="goal-item">
+            <div class="goal-check todo">□</div>
+            <div class="goal-text">Ôn 22 flashcard Bài 6</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hoạt động gần đây -->
+      <div class="info-card">
+        <div class="info-card-title">
+          <span class="material-symbols-outlined">history</span>
+          Hoạt động gần đây
+        </div>
+        <div class="activity-list">
+          <div class="activity-item">
+            <div class="activity-dot"></div>
+            <div class="activity-text">✓ Hoàn thành Bài 6</div>
+            <div class="activity-time">Hôm nay</div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-dot"></div>
+            <div class="activity-text">✓ Quiz Bài 6 — đạt 8/10</div>
+            <div class="activity-time">Hôm nay</div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-dot"></div>
+            <div class="activity-text">🎬 Xem video Bài 6</div>
+            <div class="activity-time">Hôm qua</div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-dot"></div>
+            <div class="activity-text">🃏 Ôn 16 flashcard Bài 6</div>
+            <div class="activity-time">Hôm qua</div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-dot"></div>
+            <div class="activity-text">📄 Đọc PDF Bài 6</div>
+            <div class="activity-time">3 ngày trước</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         MỚI SECTION 7: FLASHCARD ĐÃ ÔN + THÀNH TÍCH
+         ══════════════════════════════════════════ -->
+    <div class="section-header">
+      <div class="section-badge"></div>
+      <h3>Flashcard &amp; Thành tích</h3>
+    </div>
+    <div class="two-col-grid">
+
+      <!-- Flashcard đã ôn -->
+      <div class="info-card">
+        <div class="info-card-title">
+          <span class="material-symbols-outlined">style</span>
+          Flashcard đã học
+        </div>
+        <div class="flash-stat-list">
+          <div class="flash-stat-item">
+            <div class="flash-lesson-label">Bài 6</div>
+            <div class="flash-bar-wrap">
+              <div class="flash-bar-fill" style="width:100%;"></div>
+            </div>
+            <div class="flash-count">22 / 22</div>
+          </div>
+          <div class="flash-stat-item">
+            <div class="flash-lesson-label">Bài 7</div>
+            <div class="flash-bar-wrap">
+              <div class="flash-bar-fill" style="width:18%;"></div>
+            </div>
+            <div class="flash-count">4 / 22</div>
+          </div>
+          <div class="flash-stat-item">
+            <div class="flash-lesson-label">Bài 8</div>
+            <div class="flash-bar-wrap">
+              <div class="flash-bar-fill" style="width:0%;"></div>
+            </div>
+            <div class="flash-count">0 / 22</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thành tích / Huy hiệu -->
+      <div class="info-card">
+        <div class="info-card-title">
+          <span class="material-symbols-outlined">military_tech</span>
+          Huy hiệu thành tích
+        </div>
+        <div class="badge-grid">
+          <div class="badge-item earned">
+            <div class="badge-icon">🏅</div>
+            <div>Học 3 bài đầu</div>
+          </div>
+          <div class="badge-item earned">
+            <div class="badge-icon">✏️</div>
+            <div>Quiz đầu tiên</div>
+          </div>
+          <div class="badge-item earned">
+            <div class="badge-icon">🔥</div>
+            <div>5 ngày liên tiếp</div>
+          </div>
+          <div class="badge-item earned">
+            <div class="badge-icon">🃏</div>
+            <div>Ôn 22 flashcard</div>
+          </div>
+          <div class="badge-item">
+            <div class="badge-icon">🏆</div>
+            <div>Quiz điểm 10</div>
+          </div>
+          <div class="badge-item">
+            <div class="badge-icon">📚</div>
+            <div>Học cả 8 bài</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="height:24px;"></div>
+
+  </div><!-- .center -->
+</div><!-- .container -->
+
+<!-- AI BUTTON -->
+<div class="ai-button" onclick="toggleChat()">🤖</div>
+<div class="ai-chat" id="aiChat">
+  <div class="ai-header">🤖 Trợ lý AI<span onclick="toggleChat()">✖</span></div>
+  <div class="ai-body" id="aiBody"><p>👋 Tôi có thể giúp gì cho bạn?</p></div>
+  <div class="ai-input">
+    <input type="text" id="aiInput" placeholder="Hỏi AI..." onkeydown="if(event.key==='Enter')sendMsg()" />
+    <button onclick="sendMsg()">Gửi</button>
+  </div>
+</div>
+
+<script src="../js/student.js"></script>
+</body>
+</html>
